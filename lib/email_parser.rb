@@ -7,12 +7,21 @@ class EmailAddressParser
 
     attr_accessor :email_addresses
 
-    def parse=(parse)
-      @parse = parse 
+    def initialize
+        email_addresses = ["john@doe.com, person@somewhere.org"]
+
+    end 
+
+    def parse 
+      @parse  
     end 
 end 
 
-email_addresses = "john@doe.com, person@somewhere.org"
-parser = EmailAddressParser.new(email_addresses)
+email_addresses = ["john@doe.com, person@somewhere.org"]
 
-parser.parse
+# Ruby's #map method is called on an enumerable and returns an array:(from MACROS AND ABSTRACTION README)
+# mantra = ["Don't", "Repeat", "Yourself"]
+
+# mantra.map do |word|
+#   word[0]
+# end
