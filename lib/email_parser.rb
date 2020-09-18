@@ -5,19 +5,25 @@
 
 class EmailAddressParser
 
-    attr_accessor :email_addresses
+    attr_accessor :email
 
-    def initialize
-        email_addresses = ["john@doe.com, person@somewhere.org"]
-
+    def initialize(email)
+        @email = email
     end 
 
     def parse 
-      @parse  
+      @parse = @email.split(' ')
+      @parse.each {|index| index.delete_suffix!(',')}
+      @parse.uniq
     end 
-end 
+end  
 
-email_addresses = ["john@doe.com, person@somewhere.org"]
+
+# a = [ "a", "a", "b", "b", "c" ]
+# a.uniq   # => ["a", "b", "c"]
+
+
+
 
 # Ruby's #map method is called on an enumerable and returns an array:(from MACROS AND ABSTRACTION README)
 # mantra = ["Don't", "Repeat", "Yourself"]
@@ -25,3 +31,18 @@ email_addresses = ["john@doe.com, person@somewhere.org"]
 # mantra.map do |word|
 #   word[0]
 # end
+
+
+
+
+
+
+
+# foods.each do |key, value|
+#   foods[key] !== "delicious"
+#     puts 
+
+#     .....
+
+
+# ruby archer 
